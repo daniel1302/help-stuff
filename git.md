@@ -1,8 +1,8 @@
 # Git commands
 
-## Simple commands
+### Simple commands
 
-````
+```
   git cherry-pick [sha-commita]                         move one commit into current branch
   git revert [sha-commita]                              revert changes
   git revert -m 1 [sha-commita]                         revert only one merge
@@ -27,11 +27,10 @@
   git checkout -b [NEW_NAME] master                     creates a branch called [NEW_NAME] based on master
   git push -u origin [NEW_NAME]                         push new branch to origin and turn on remote tracking(-u)
 
-
 ```
 
 
-## Git config
+### Git config
 ```
 git config --global user.name "[USER_NAME]"
 git config --global user.email [EMAIL]
@@ -39,7 +38,7 @@ git config --global core.editor [EDITOR_NAME]
 ```
 
 
-## Git aliases
+### Git aliases
 ```
 git config --global alias.tree "log --oneline --decorate --all --graph"
 ```
