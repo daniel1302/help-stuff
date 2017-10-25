@@ -1,5 +1,7 @@
 # Git commands
 
+## Simple commands
+
 ````
 git cherry-pick [sha-commita]                         move one commit into current branch
 git revert [sha-commita]                              revert changes
@@ -14,12 +16,28 @@ git diff --cached                                     dIff from cache
 
 git stash                                             add files to stash
 git stash list                                        show stashes
-git stash show -p stash@{[NUMER_SATASHA]}             git diff for stash
-git stash apply stash@{[NUMER_SATASHA]}               apply changes from stash
-git stash drop stash@{[NUMER_SATASHA]}                remove stash
+git stash show -p stash@{[STASH_NO]}                  git diff for stash
+git stash apply stash@{[STASH_NO]}                    apply changes from stash
+git stash drop stash@{[STASH_NO]}                     remove stash
 
-git branch [NAZWA_BRANCHA]                            add new branch
-git branch -d [NAZWA_BRANCHA]                         remove branch
+git branch [BRANCH_NAME]                              add new branch
+git branch -d [BRANCH_NAME]                           remove branch
 git branch --merged                                   show merged branches
 git branch --no-merged                                show no merged branches
+git checkout -b [NEW_NAME] master                     creates a branch called [NEW_NAME] based on master
+git push -u origin [NEW_NAME]                         push new branch to origin and turn on remote tracking(-u)
+```
+
+
+## Git config
+```
+git config --global user.name "[USER_NAME]"
+git config --global user.email [EMAIL]
+git config --global core.editor [EDITOR_NAME]
+```
+
+
+## Git aliases
+```
+git config --global alias.tree "log --oneline --decorate --all --graph"
 ```
