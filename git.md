@@ -1,3 +1,6 @@
+# Git commands
+
+````
 git cherry-pick [sha-commita]                         move one commit into current branch
 git revert [sha-commita]                              revert changes
 git revert -m 1 [sha-commita]                         revert only one merge
@@ -19,3 +22,4 @@ git branch [NAZWA_BRANCHA]                            add new branch
 git branch -d [NAZWA_BRANCHA]                         remove branch
 git branch --merged                                   show merged branches
 git branch --no-merged                                show no merged branches
+```
