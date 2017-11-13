@@ -6,9 +6,11 @@ pacman -Syu --noconfirm;
 # Install vim
 pacman -S --noconfirm vim;
 
-#Install tor-browser
+# Install tor-browser
 pacman -S tor-browser;
 
+# Install Meld
+sudo pacman -S --noconfirm meld;
 
 # Install Sublime-Text Dev (https://www.sublimetext.com/docs/3/linux_repositories.html)
 curl \
