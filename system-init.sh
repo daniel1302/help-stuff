@@ -20,19 +20,44 @@ curl \
 	| sudo tee -a /etc/pacman.conf \
 && sudo pacman -Syu --noconfirm sublime-text;
 
+# Install nginx web server
+sudo pacman -S --noconfirm \
+	nginx \
+&& sudo systemctl enable nginx \
+&& sudo systemctl start nginx;
+
+# Install PHP and PHP extensions
+sudo pacman -S --noconfirm \
+	php \
+	php-fpm \
+	php-pgsql \
+	php-mongodb \
+	php-gd \
+	php-imap \
+	php-intl \
+	php-mcrypt \ 
+	composer \
+&& sudo systemctl enable php-fpm \
+&& sudo systemctl start php-fpm;
 
 # Install mysql server and client
-pacman -S --noconfirm \ 
+sudo pacman -S --noconfirm \ 
 	percona-server \
 	percona-server-clients \
 	libperconaserverclient \
-	percona-toolkit;
+	percona-toolkit \
+&& sudo systemctl enable mysqld \
+&& sudo systemctl start mysqld;
 
 # TODO: Init DB
 
 # Install docker and docker machines
-pacman -S --noconfirm \
+sudo pacman -S --noconfirm \
 	docker \
 	docker-machine \
-	docker-compose;
+	docker-compose \
+&& sudo systemctl enable iptables \
+&& sudo systemctl start iptables \
+&& sudo systemctl enable docker \
+&& sudo systemctl start docker;
 
