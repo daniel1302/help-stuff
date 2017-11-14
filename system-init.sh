@@ -61,3 +61,12 @@ sudo pacman -S --noconfirm \
 && sudo systemctl enable docker \
 && sudo systemctl start docker;
 
+# Install AWC CLI
+sudo pacman -S aws-cli;
+
+# Add command aws_auth
+echo '#!/bin/bash' | sudo \
+	tee /bin/aws_auth > /dev/null \
+&& echo 'CMD=`echo "sudo $(aws ecr get-login --region us-east-1)" | sed "s/[ ]*\-e[ ]*none[ ]*/ /g"`; $CMD;' | sudo \
+	tee --append /bin/aws_auth > /dev/null 
+&& sudo chmod +x /bin/aws_auth; 
