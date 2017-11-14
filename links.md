@@ -7,4 +7,5 @@
 ### Videos PL
   * [CQRS](https://vimeo.com/197594221)
    
-  
+### Tools
+  * [Explain Shell](https://explainshell.com/)
