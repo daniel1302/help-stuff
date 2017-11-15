@@ -62,7 +62,7 @@ sudo pacman -S --noconfirm \
 && sudo systemctl start docker;
 
 # Install AWC CLI
-sudo pacman -S aws-cli;
+sudo pacman -S --noconfirm aws-cli;
 
 # Add command aws_auth
 echo '#!/bin/bash' | sudo \
@@ -74,4 +74,4 @@ echo '#!/bin/bash' | sudo \
 # Add transfer command, that can upload files to http://transfer.sh
 echo 'transfer() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi' >> ~/.bashrc \
 && echo 'tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }' >> ~/.bashrc \
-&& source ~/.bashrc
+&& source ~/.bashrc;
