@@ -1,4 +1,4 @@
-# This is script for Arch linux, that help me start system.
+# This is script for Arch linux, that help me start up new system instance .
 
 # Update system
 pacman -Syu --noconfirm;
@@ -70,3 +70,8 @@ echo '#!/bin/bash' | sudo \
 && echo 'CMD=`echo "sudo $(aws ecr get-login --region us-east-1)" | sed "s/[ ]*\-e[ ]*none[ ]*/ /g"`; $CMD;' | sudo \
 	tee --append /bin/aws_auth > /dev/null 
 && sudo chmod +x /bin/aws_auth; 
+
+# Add transfer command, that can upload files to http://transfer.sh
+echo 'transfer() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi' >> ~/.bashrc \
+&& echo 'tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }' >> ~/.bashrc \
+&& source ~/.bashrc
