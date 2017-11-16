@@ -75,3 +75,11 @@ echo '#!/bin/bash' | sudo \
 echo 'transfer() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi' >> ~/.bashrc \
 && echo 'tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }' >> ~/.bashrc \
 && source ~/.bashrc;
+
+# Install PhpStorm
+sudo curl --output /tmp/phpstorm-2017.2.4.tar.gz https://download-cf.jetbrains.com/webide/PhpStorm-2017.2.4.tar.gz \
+&& sudo tar -xzvf /tmp/phpstorm-2017.2.4.tar.gz --directory /usr/share \
+&& sudo mv /usr/share/`ls -l /usr/share | grep PhpStorm | awk '{print $8}'` /usr/share/phpstorm \
+&& sudo chown `whoami`:`whoami` -R /usr/share/phpstorm \
+&& rm /tmp/phpstorm-2017.2.4.tar.gz
+&& sudo ln -s /usr/share/phpstorm/bin/phpstorm.sh /bin/phpstorm;
