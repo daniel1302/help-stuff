@@ -83,3 +83,6 @@ sudo curl --output /tmp/phpstorm-2017.2.4.tar.gz https://download-cf.jetbrains.c
 && sudo chown `whoami`:`whoami` -R /usr/share/phpstorm \
 && rm /tmp/phpstorm-2017.2.4.tar.gz
 && sudo ln -s /usr/share/phpstorm/bin/phpstorm.sh /bin/phpstorm;
+
+# Install Mysql Workbech
+sudo pacman -S --noconfirm mysql-workbench;
