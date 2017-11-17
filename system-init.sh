@@ -1,5 +1,10 @@
 # This is script for Arch linux, that help me start up new system instance .
 
+# Variables used in script
+KERNEL_VERSION=$(echo `uname -r` | awk -F . '{print $1$2}');
+
+
+
 # Update system
 pacman -Syu --noconfirm;
 
@@ -86,3 +91,11 @@ sudo curl --output /tmp/phpstorm-2017.2.4.tar.gz https://download-cf.jetbrains.c
 
 # Install Mysql Workbech
 sudo pacman -S --noconfirm mysql-workbench;
+
+# Install virtualbox
+sudo pacman -S --noconfirm \
+	virtualbox \
+	"linux${KERNEL_VERSION}-virtualbox-guest-modules" \
+	"linux${KERNEL_VERSION}-virtualbox-host-modules";
+	
+
