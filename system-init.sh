@@ -3,16 +3,20 @@
 # Variables used in script
 KERNEL_VERSION=$(echo `uname -r` | awk -F . '{print $1$2}');
 
-
-
 # Update system
-pacman -Syu --noconfirm;
+sudo pacman -Syu --noconfirm;
 
 # Install vim
-pacman -S --noconfirm vim;
+sudo pacman -S --noconfirm vim;
+
+
+# Install and configure git
+sudo pacman -S --noconfirm git \
+    && git config --global alias.tree "log --oneline --decorate --all --graph" \
+    && git config --global core.editor vim;
 
 # Install tor-browser
-pacman -S tor-browser;
+sudo pacman -S tor-browser;
 
 # Install Meld
 sudo pacman -S --noconfirm meld;
