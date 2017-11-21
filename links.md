@@ -11,3 +11,9 @@
    
 ### Tools
   * [Explain Shell](https://explainshell.com/)
+
+
+
+### Videos EN
+##### Security 
+ * [Detecting Kernel Memory Disclosure](https://www.youtube.com/watch?v=8tqo78E04cM)
