@@ -9,6 +9,8 @@ sudo pacman -Syu --noconfirm;
 # Install vim
 sudo pacman -S --noconfirm vim;
 
+# Install sshfs
+sudo pacman -S --noconfirm sshfs
 
 # Install and configure git
 sudo pacman -S --noconfirm git \
