@@ -90,10 +90,19 @@ echo 'transfer() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:
 # Install PhpStorm
 sudo curl --output /tmp/phpstorm-2017.2.4.tar.gz https://download-cf.jetbrains.com/webide/PhpStorm-2017.2.4.tar.gz \
 && sudo tar -xzvf /tmp/phpstorm-2017.2.4.tar.gz --directory /usr/share \
-&& sudo mv /usr/share/`ls -l /usr/share | grep PhpStorm | awk '{print $8}'` /usr/share/phpstorm \
-&& sudo chown `whoami`:`whoami` -R /usr/share/phpstorm \
-&& rm /tmp/phpstorm-2017.2.4.tar.gz
+&& ls -l /usr/share | grep PhpStorm >> /dev/null \
+&& sudo mv /usr/share/`ls -l /usr/share | grep PhpStorm | awk '{print $8}'` /usr/share/phpstorm1 \
+&& sudo chown `whoami`:`whoami` -R /usr/share/phpstorm1 \
+&& sudo rm /tmp/phpstorm-2017.2.4.tar.gz
 && sudo ln -s /usr/share/phpstorm/bin/phpstorm.sh /bin/phpstorm;
+
+sudo curl --output /tmp/CLion-2017.2.3.tar.gz https://download-cf.jetbrains.com/cpp/CLion-2017.2.3.tar.gz \
+&& sudo tar -xzvf /tmp/CLion-2017.2.3.tar.gz --directory /usr/share \
+&& ls -l /usr/share | grep clion >> /dev/null \
+&& sudo mv /usr/share/`ls -l /usr/share | grep clion | awk '{print $8}'` /usr/share/clion \
+&& sudo chown `whoami`:`whoami` -R /usr/share/clion \
+&& sudo rm /tmp/CLion-2017.2.3.tar.gz \
+&& sudo ln -s /usr/share/clion/bin/clion.sh /bin/clion;
 
 # Install Mysql Workbech
 sudo pacman -S --noconfirm mysql-workbench;
