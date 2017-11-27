@@ -116,3 +116,5 @@ sudo pacman -S --noconfirm \
 	"linux${KERNEL_VERSION}-virtualbox-host-modules";
 	
 
+# Install transmission with QT gui
+sudo pacman -S --noconfirm transmission-qt;
