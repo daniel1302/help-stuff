@@ -114,7 +114,9 @@ sudo pacman -S --noconfirm \
 	virtualbox \
 	"linux${KERNEL_VERSION}-virtualbox-guest-modules" \
 	"linux${KERNEL_VERSION}-virtualbox-host-modules";
-	
 
 # Install transmission with QT gui
 sudo pacman -S --noconfirm transmission-qt;
+
+# Install Netbeans
+sudo pacman -S --noconfirm netbeans;
