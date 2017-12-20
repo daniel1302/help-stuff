@@ -134,7 +134,13 @@ sudo pacman -S --noconfirm patchelf \
 
 
 # Install Terraform
-sudo pacman -S --noconfirm terraform \
+sudo curl --output /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.11.0/terraform_0.11.0_linux_amd64.zip \
+&&  { \
+        cd /tmp \
+	&& sudo unzip -f terraform.zip \
+	&& sudo mv terraform /usr/local/bin/ \
+	&& sudo chmod +x /usr/local/bin/terraform; \
+} \
     && alias tf='env AWS_ACCESS_KEY_ID=$(aws configure get profile.default.aws_access_key_id) AWS_SECRET_ACCESS_KEY=$(aws configure get profile.default.aws_secret_access_key) terraform';
 
 
