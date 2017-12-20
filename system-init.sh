@@ -134,4 +134,7 @@ sudo pacman -S --noconfirm patchelf \
 
 
 # Install Terraform
-sudo pacman -S --noconfirm terraform;
+sudo pacman -S --noconfirm terraform
+    && alias tf='env AWS_ACCESS_KEY_ID=$(aws configure get profile.default.aws_access_key_id) AWS_SECRET_ACCESS_KEY=$(aws configure get profile.default.aws_secret_access_key) terraform';
+
+
