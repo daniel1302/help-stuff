@@ -116,7 +116,7 @@ sudo pacman -S --noconfirm transmission-qt;
 # Install Netbeans
 sudo pacman -S --noconfirm netbeans;
 
-#Install Master PDF Editor
+# Install Master PDF Editor
 sudo pacman -S --noconfirm patchelf \
 && sudo curl --output /tmp/master-pdf-editor.tar.gz https://aur.archlinux.org/cgit/aur.git/snapshot/masterpdfeditor.tar.gz \
 && sudo tar -xzvf /tmp/master-pdf-editor.tar.gz  --directory /tmp \
@@ -131,3 +131,7 @@ sudo pacman -S --noconfirm patchelf \
 	&& sudo rm -R /tmp/$PKGDIR \
 	&& suro rm /tmp/master-pdf-editor.tar.gz; \
 };
+
+
+# Install Terraform
+sudo pacman -S --noconfirm terraform;
