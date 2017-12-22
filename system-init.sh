@@ -1,6 +1,11 @@
 #!/bin/bash
 # This is script for Arch linux, that help me start up new system instance .
 
+
+[ `whoami` == "root" ] \
+    && echo "Don not run it as root" \
+    && exit 1;
+
 # Variables used in script
 KERNEL_VERSION=$(echo `uname -r` | awk -F . '{print $1$2}');
 
