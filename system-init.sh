@@ -1,3 +1,4 @@
+#!/bin/bash
 # This is script for Arch linux, that help me start up new system instance .
 
 # Variables used in script
@@ -41,7 +42,6 @@ sudo pacman -S --noconfirm \
 	php-gd \
 	php-imap \
 	php-intl \
-	php-mcrypt \ 
 	composer \
 && sudo systemctl enable php-fpm \
 && sudo systemctl start php-fpm;
@@ -74,7 +74,7 @@ sudo pacman -S --noconfirm aws-cli;
 echo '#!/bin/bash' | sudo \
 	tee /bin/aws_auth > /dev/null \
 && echo 'CMD=`echo "sudo $(aws ecr get-login --region us-east-1)" | sed "s/[ ]*\-e[ ]*none[ ]*/ /g"`; $CMD;' | sudo \
-	tee --append /bin/aws_auth > /dev/null 
+	tee --append /bin/aws_auth > /dev/null \
 && sudo chmod +x /bin/aws_auth; 
 
 # Add transfer command, that can upload files to http://transfer.sh
@@ -83,17 +83,19 @@ echo 'transfer() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:
 && source ~/.bashrc;
 
 # Install PhpStorm
-sudo curl --output /tmp/phpstorm-2017.2.4.tar.gz https://download-cf.jetbrains.com/webide/PhpStorm-2017.2.4.tar.gz \
+[ ! -e /bin/phpstorm ] \
+&& sudo curl --output /tmp/phpstorm-2017.2.4.tar.gz https://download-cf.jetbrains.com/webide/PhpStorm-2017.2.4.tar.gz \
 && sudo tar -xzvf /tmp/phpstorm-2017.2.4.tar.gz --directory /usr/share \
 && ls -l /usr/share | grep PhpStorm >> /dev/null \
 && sudo mv /usr/share/`ls -l /usr/share | grep PhpStorm | awk '{print $8}'` /usr/share/phpstorm \
 && sudo chown `whoami`:`whoami` -R /usr/share/phpstorm \
-&& sudo rm /tmp/phpstorm-2017.2.4.tar.gz
+&& sudo rm /tmp/phpstorm-2017.2.4.tar.gz \
 && sudo ln -s /usr/share/phpstorm/bin/phpstorm.sh /bin/phpstorm;
 
 
 #Install CLion
-sudo curl --output /tmp/CLion-2017.2.3.tar.gz https://download-cf.jetbrains.com/cpp/CLion-2017.2.3.tar.gz \
+[ ! -e /bin/clion ] \
+&& sudo curl --output /tmp/CLion-2017.2.3.tar.gz https://download-cf.jetbrains.com/cpp/CLion-2017.2.3.tar.gz \
 && sudo tar -xzvf /tmp/CLion-2017.2.3.tar.gz --directory /usr/share \
 && ls -l /usr/share | grep clion >> /dev/null \
 && sudo mv /usr/share/`ls -l /usr/share | grep clion | awk '{print $8}'` /usr/share/clion \
@@ -117,36 +119,41 @@ sudo pacman -S --noconfirm transmission-qt;
 sudo pacman -S --noconfirm netbeans;
 
 # Install Master PDF Editor
-sudo pacman -S --noconfirm patchelf \
-&& sudo curl --output /tmp/master-pdf-editor.tar.gz https://aur.archlinux.org/cgit/aur.git/snapshot/masterpdfeditor.tar.gz \
-&& sudo tar -xzvf /tmp/master-pdf-editor.tar.gz  --directory /tmp \
-&& { \
+hash masterpdfeditor4 \
+|| { \
+    sudo pacman -S --noconfirm patchelf \
+    && sudo curl --output /tmp/master-pdf-editor.tar.gz https://aur.archlinux.org/cgit/aur.git/snapshot/masterpdfeditor.tar.gz \
+    && sudo tar -xzvf /tmp/master-pdf-editor.tar.gz  --directory /tmp \
+    && { \
 	PKGDIR=`ls /tmp | grep masterpdfeditor`; \
 	sudo chown `whoami`:`whoami` -R /tmp/$PKGDIR \
 	&& cd /tmp/$PKGDIR \
 	&& makepkg \
 		-i \
 		--noconfirm \
-		--noprogressbar \
 	&& sudo rm -R /tmp/$PKGDIR \
-	&& suro rm /tmp/master-pdf-editor.tar.gz; \
+	&& sudo rm /tmp/master-pdf-editor.tar.gz; \
+    }; \
 };
 
 
 # Install Terraform
-sudo curl --output /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.11.1/terraform_0.11.1_linux_amd64.zip \
+[ ! -e /usr/local/bin/terraform ] \
+&& echo "Installing terraform" \
+&& sudo curl --output /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.11.1/terraform_0.11.1_linux_amd64.zip \
 &&  { \
         cd /tmp \
-	&& sudo unzip -f terraform.zip \
+	&& [ ! -e ./terraform ] \
+	&& sudo unzip terraform.zip \
 	&& sudo mv terraform /usr/local/bin/ \
 	&& sudo chmod +x /usr/local/bin/terraform; \
 } \
+    && echo "Done" \
+    && echo "Configuring Terraform for AWS" \
     && echo "tf() { env AWS_ACCESS_KEY_ID=\$(aws configure get profile.default.aws_access_key_id) AWS_SECRET_ACCESS_KEY=\$(aws configure get profile.default.aws_secret_access_key) terraform $@; }" >> ~/.bashrc;
-    
     
     
     
     
 # Reload ~/.bashrc    
 source ~/.bashrc;
-
