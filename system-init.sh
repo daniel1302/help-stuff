@@ -141,7 +141,7 @@ sudo curl --output /tmp/terraform.zip https://releases.hashicorp.com/terraform/0
 	&& sudo mv terraform /usr/local/bin/ \
 	&& sudo chmod +x /usr/local/bin/terraform; \
 } \
-    && echo "tf() { env AWS_ACCESS_KEY_ID=\$(aws configure get profile.default.aws_access_key_id) AWS_SECRET_ACCESS_KEY=\$(aws configure get profile.default.aws_secret_access_key) terraform; }" >> ~/.bashrc;
+    && echo "tf() { env AWS_ACCESS_KEY_ID=\$(aws configure get profile.default.aws_access_key_id) AWS_SECRET_ACCESS_KEY=\$(aws configure get profile.default.aws_secret_access_key) terraform $@; }" >> ~/.bashrc;
     
     
     
