@@ -156,7 +156,10 @@ hash masterpdfeditor4 \
     && echo "Done" \
     && echo "Configuring Terraform for AWS" \
     && echo "tf() { env AWS_ACCESS_KEY_ID=\$(aws configure get profile.default.aws_access_key_id) AWS_SECRET_ACCESS_KEY=\$(aws configure get profile.default.aws_secret_access_key) terraform $@; }" >> ~/.bashrc;
-    
+
+
+# Instal Remmina
+sudo pacman -S --noconfirm remmina;
     
     
     
