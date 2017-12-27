@@ -1,4 +1,4 @@
-#!/bin/bash
+r#!/bin/bash
 # This is script for Arch linux, that help me start up new system instance .
 
 
@@ -165,3 +165,20 @@ sudo pacman -S --noconfirm remmina;
     
 # Reload ~/.bashrc    
 source ~/.bashrc;
+
+#Install Slack Desktop
+command -v slack >> /dev/null \
+&& echo "Slack desktop is instaled yet. Instalation will be skipped." \
+|| {
+    sudo pacman -S --noconfirm libcurl-compat \
+    && sudo curl --output /tmp/slack.tar.gz https://aur.archlinux.org/cgit/aur.git/snapshot/slack-desktop.tar.gz \
+    && sudo tar -xzvf /tmp/slack.tar.gz --directory /tmp \
+    && sudo rm /tmp/slack.tar.gz \
+    && { \
+        PKGDIR=`ls /tmp | grep slack-desktop`; \
+        sudo chown `whoami`:`whoami` -R /tmp/$PKGDIR \
+        && cd /tmp/$PKGDIR \
+        && makepkg -i \
+	&& sudo rm -R /tmp/$PKGDIR;
+    }; \
+}; 
