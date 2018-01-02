@@ -161,10 +161,6 @@ hash masterpdfeditor4 \
 # Instal Remmina
 sudo pacman -S --noconfirm remmina;
     
-    
-    
-# Reload ~/.bashrc    
-source ~/.bashrc;
 
 #Install Slack Desktop
 command -v slack >> /dev/null \
@@ -182,3 +178,11 @@ command -v slack >> /dev/null \
 	&& sudo rm -R /tmp/$PKGDIR;
     }; \
 }; 
+
+#Install GO Lang
+sudo pacman -S go;
+
+    
+    
+# Reload ~/.bashrc    
+source ~/.bashrc;
