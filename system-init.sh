@@ -1,4 +1,4 @@
-r#!/bin/bash
+#!/bin/bash
 # This is script for Arch linux, that help me start up new system instance .
 
 
