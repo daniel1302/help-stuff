@@ -51,6 +51,15 @@ sudo pacman -S --noconfirm \
 && sudo systemctl enable php-fpm \
 && sudo systemctl start php-fpm;
 
+# Install PHP CodeSniffer
+sudo curl --output /bin/phpcs \
+	-OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar \
+&& sudo chmod +x /bin/phpcs;
+
+sudo curl --output /tmp/php-compatibility.zip -OL https://github.com/wimg/PHPCompatibility/archive/8.1.0.zip \
+&& sudo unzip -f /tmp/php-compatibility.zip -d /usr/lib/ \
+&& sudo phpcs --config-set installed_paths /usr/lib/`ls -a /usr/lib | grep PHPCompatibility`;
+
 # Install mysql server and client
 sudo pacman -S --noconfirm \ 
 	percona-server \
