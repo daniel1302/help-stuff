@@ -191,7 +191,34 @@ command -v slack >> /dev/null \
 #Install GO Lang
 sudo pacman -S go;
 
-    
+# Apply PHP Code Sniffer scanner into .bashrc
+echo "phpCsScan()" >> ~/.bashrc \
+&& echo "{" >> ~/.bashrc \
+&& echo "    if [ ! \$# -eq 2 ] || [ ! -d \"\$1\" ] || [ ! -d \"\$2\" ];" >> ~/.bashrc \
+&& echo "    then" >> ~/.bashrc \
+&& echo "        echo \"Usage: phpCsScan SCANNED_DIRECTORY REPORT_OUTPUT_DIRECTORY\";" >> ~/.bashrc \
+&& echo "        return 1;" >> ~/.bashrc \
+&& echo "    fi;" >> ~/.bashrc \
+&& echo "" >> ~/.bashrc \
+&& echo "    scanDIR=\"\$1\"" >> ~/.bashrc \
+&& echo "" >> ~/.bashrc \
+&& echo "    for dir in \$(find \"\$scanDIR\" -mindepth 1 -maxdepth 1 -type d);" >> ~/.bashrc \
+&& echo "    do" >> ~/.bashrc \
+&& echo "        dir=\${dir%*/}" >> ~/.bashrc \
+&& echo "        dir=\${dir##*/}" >> ~/.bashrc \
+&& echo "        outputDIR=\$2" >> ~/.bashrc \
+&& echo "        outputDIR=\${outputDIR%*/}" >> ~/.bashrc \
+&& echo "" >> ~/.bashrc \
+&& echo "        echo \"Analysing \$dir...\";" >> ~/.bashrc \
+&& echo "        php -dmemory_limit=-1 /usr/bin/phpcs -p \"\$scanDIR/\$dir\" --standard=PHPCompatibility > \"\$outputDIR/\$dir.txt\";" >> ~/.bashrc \
+&& echo "        echo \"Writing results into  \$outputDIR/\$dir.txt\";" >> ~/.bashrc \
+&& echo "        echo \"done.\"" >> ~/.bashrc \
+&& echo "    done;" >> ~/.bashrc \
+&& echo "" >> ~/.bashrc \
+&& echo "}" >> ~/.bashrc \
+&& source ~/.bashrc;
+
+
     
 # Reload ~/.bashrc    
 source ~/.bashrc;
