@@ -215,9 +215,33 @@ echo "phpCsScan()" >> ~/.bashrc \
 && echo "        echo \"done.\"" >> ~/.bashrc \
 && echo "    done;" >> ~/.bashrc \
 && echo "" >> ~/.bashrc \
-&& echo "}" >> ~/.bashrc \
-&& source ~/.bashrc;
+&& echo "}" >> ~/.bashrc;
 
+
+
+# Install PHPUnit6
+[ -e /usr/bin/phpunit6 ] \
+  && echo "Removing /usr/bin/phpunit6..." \
+  && sudo rm /usr/bin/phpunit6 \
+  && echo "Done";
+  
+  [ -e /usr/bin/phpunit ] \
+    && echo "Removing /usr/bin/phpunit..." \
+    && sudo rm /usr/bin/phpunit \
+    && echo "Done";
+
+sudo curl --output /usr/bin/phpunit6 -OL https://phar.phpunit.de/phpunit-6.phar \
+&& sudo chmod +x /usr/bin/phpunit6 \
+&& sudo ln -s /usr/bin/phpunit6 /usr/bin/phpunit;
+
+# Install PHPUnit5
+[ -e /usr/bin/phpunit5 ] \
+  && echo "Removing /usr/bin/phpunit5..." \
+  && sudo rm /usr/bin/phpunit5 \
+  && echo "Done";
+
+sudo curl --output /usr/bin/phpunit5 -OL https://phar.phpunit.de/phpunit-5.phar \
+&& sudo chmod +x /usr/bin/phpunit5;
 
     
 # Reload ~/.bashrc    
