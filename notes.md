@@ -2,6 +2,7 @@
 
 ### [Doctrine best practices](https://www.youtube.com/watch?v=WW2qPKukoZY)
 
+```
   Entities should work w/o ORM,
   Entities are not typed arrays,
   Entities should do some stuff,
@@ -24,3 +25,4 @@
   MyRepository::find() can return null, ::get() cannot ::get() method should throw an exception,
   Keep transactions unrelated,
   Comunicate betwen boundaries betwen IDs, not object references.
+```
