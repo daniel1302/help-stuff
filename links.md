@@ -14,6 +14,8 @@
 ### Tools
   * [Explain Shell](https://explainshell.com/)
 
+### C++
+  * [C++11](https://www.thegeekstuff.com/2016/02/c-plus-plus-11)
 
 
 ### Videos EN
