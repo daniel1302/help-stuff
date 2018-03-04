@@ -16,6 +16,7 @@
 
 ### C++
   * [C++11](https://www.thegeekstuff.com/2016/02/c-plus-plus-11)
+  * [Preparing unit tests with google test and cmake in C++](http://kaizou.org/2014/11/gtest-cmake/)
 
 
 ### Videos EN
