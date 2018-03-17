@@ -19,6 +19,7 @@
   * [Preparing unit tests with google test and cmake in C++](http://kaizou.org/2014/11/gtest-cmake/)
   * [Self bool idiom](https://www.artima.com/cppsource/safebool.html)
   * [C++ Idioms](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Thin_Template)
+  * [Random generators](http://itscompiling.eu/2016/04/11/generating-random-numbers-cpp/)
 
 
 ### Videos EN
