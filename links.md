@@ -20,7 +20,7 @@
   * [Self bool idiom](https://www.artima.com/cppsource/safebool.html)
   * [C++ Idioms](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Thin_Template)
   * [Random generators](http://itscompiling.eu/2016/04/11/generating-random-numbers-cpp/)
-
+  * [Too many initializer](https://4programmers.net/Forum/C_i_C++/263116-too_many_initializers?p=1206312#id1206312) - thanks to [satirev](https://github.com/satirev)
 
 ### Videos EN
 ##### Security 
