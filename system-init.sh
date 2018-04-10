@@ -243,6 +243,19 @@ sudo curl --output /usr/bin/phpunit6 -OL https://phar.phpunit.de/phpunit-6.phar 
 sudo curl --output /usr/bin/phpunit5 -OL https://phar.phpunit.de/phpunit-5.phar \
 && sudo chmod +x /usr/bin/phpunit5;
 
+
+
+#Insall Keepass and google sync plugin
+
+[ -e /tmp/google-keepass.zip ] \
+    && sudo rm /tmp/google-keepass.zip;
+
+sudo pacman -S --noconfirm \
+        keepass \
+    && sudo curl \
+        --output /tmp/google-keepass.zip \
+	-OL https://netcologne.dl.sourceforge.net/project/kp-googlesync/GoogleSyncPlugin-3.x/GoogleSyncPlugin-3.0.1.zip \
+   && sudo unzip /tmp/google-keepass.zip -d /usr/share/keepass;
     
 # Reload ~/.bashrc    
 source ~/.bashrc;
