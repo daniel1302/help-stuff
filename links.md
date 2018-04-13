@@ -13,6 +13,11 @@
    
 ### Tools
   * [Explain Shell](https://explainshell.com/)
+  
+  
+### Linux administration
+  * [Bash pitfails](https://mywiki.wooledge.org/BashPitfalls)
+  
 
 ### C++
   * [C++11](https://www.thegeekstuff.com/2016/02/c-plus-plus-11)
