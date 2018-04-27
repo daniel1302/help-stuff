@@ -41,4 +41,5 @@ git config --global core.editor [EDITOR_NAME]
 ### Git aliases
 ```
 git config --global alias.tree "log --oneline --decorate --all --graph"
+git config --global alias.tree1 "log --oneline --decorate --all --graph --format='%Cblue%h%Cgreen<%an>: %Creset%B'"
 ```
