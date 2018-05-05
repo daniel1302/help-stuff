@@ -1,0 +1,5 @@
+selectp -t 0
+splitw -v -p 20 
+selectp -t 0
+splitw -h -p 80 
+selectp -t 2
