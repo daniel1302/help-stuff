@@ -106,15 +106,15 @@ echo 'transfer() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:
 && sudo rm /tmp/phpstorm-2017.2.4.tar.gz \
 && sudo ln -s /usr/share/phpstorm/bin/phpstorm.sh /bin/phpstorm;
 
-
 #Install CLion
+# [ -e /bin/clion ] && sudo rm /bin/clion && sudo /usr/share/clion -R;
 [ ! -e /bin/clion ] \
-&& sudo curl --output /tmp/CLion-2017.2.3.tar.gz https://download-cf.jetbrains.com/cpp/CLion-2017.2.3.tar.gz \
-&& sudo tar -xzvf /tmp/CLion-2017.2.3.tar.gz --directory /usr/share \
+&& sudo curl --output /tmp/CLion-2018.1.2.tar.gz https://download-cf.jetbrains.com/cpp/CLion-2018.1.2.tar.gz \
+&& sudo tar -xzvf /tmp/CLion-2018.1.2.tar.gz --directory /usr/share \
 && ls -l /usr/share | grep clion >> /dev/null \
 && sudo mv /usr/share/`ls -l /usr/share | grep clion | awk '{print $8}'` /usr/share/clion \
 && sudo chown `whoami`:`whoami` -R /usr/share/clion \
-&& sudo rm /tmp/CLion-2017.2.3.tar.gz \
+&& sudo rm /tmp/CLion-2018.1.2.tar.gz \
 && sudo ln -s /usr/share/clion/bin/clion.sh /bin/clion;
 
 # Install Mysql Workbech
