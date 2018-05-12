@@ -97,6 +97,7 @@ echo 'transfer() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:
 && source ~/.bashrc;
 
 # Install PhpStorm
+#sudo rm /bin/phpstorm && sudo rm /usr/share/phpstorm -R
 [ ! -e /bin/phpstorm ] \
 && sudo curl --output /tmp/phpstorm-2018.1.3.tar.gz https://download-cf.jetbrains.com/webide/PhpStorm-2018.1.3.tar.gz \
 && sudo tar -xzvf /tmp/phpstorm-2018.1.3.tar.gz --directory /usr/share \
