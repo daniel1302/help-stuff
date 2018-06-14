@@ -1,5 +1,6 @@
 # help-stuff
-Some links and commands I using everyday
+Some links and commands I use everyday
+
 
 1. [Git](git.md) 
 2. [Helpful links](links.md) 
