@@ -34,6 +34,9 @@
  * [Shodan](https://www.shodan.io/)
 
 
+### Books TO READ
+  * [Cracking the Coding Interview: 189 Programming Questions and Solutions](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/ref=sr_1_1?ie=UTF8&qid=1529070043&sr=8-1&keywords=Cracking+the+Coding+Interview)
+
 
 #### Priv
  * [IBood](http://www.ibood.pl/)
