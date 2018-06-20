@@ -13,7 +13,7 @@
    
 ### Tools
   * [Explain Shell](https://explainshell.com/)
-  
+  * [CJDNS for Arch](https://wiki.archlinux.org/index.php/Cjdns)
   
 ### Linux administration
   * [Bash pitfails](https://mywiki.wooledge.org/BashPitfalls)
