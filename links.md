@@ -31,6 +31,7 @@
 ##### Security 
  * [Detecting Kernel Memory Disclosure](https://www.youtube.com/watch?v=8tqo78E04cM)
  * [Game Dev/Programming with Bisqwit](https://www.youtube.com/watch?v=y71lli8MS8s&index=4&list=PL7A1B745BB1504D83)
+ * [Decode our Digital World](https://www.youtube.com/watch?v=TPS-eFmdepw)
  * [Shodan](https://www.shodan.io/)
 
 
