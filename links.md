@@ -7,6 +7,7 @@
   * [PHP Refactoring](http://phprefactor.com/)
   * [Entities](https://sarvendev.com/2018/01/encja-byc-zawsze-poprawnym-obiektem/)
   * [About Entities and DTO in Symfony](https://blog.martinhujer.cz/symfony-forms-with-request-objects/)
+  * [Blog about AWS and clouds](https://cloudonaut.io/)
   
 ### Videos PL
   * [CQRS](https://vimeo.com/197594221)
