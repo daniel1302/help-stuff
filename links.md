@@ -17,6 +17,7 @@
   
 ### Linux administration
   * [Bash pitfails](https://mywiki.wooledge.org/BashPitfalls)
+  * [IP Tables](http://rjachowicz.kis.p.lodz.pl/IPTables.pdf)
   
 
 ### C++
