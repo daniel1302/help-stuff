@@ -20,6 +20,10 @@
   * [Bash pitfails](https://mywiki.wooledge.org/BashPitfalls)
   * [IP Tables](http://rjachowicz.kis.p.lodz.pl/IPTables.pdf)
   
+### History
+  * [wyklady.net](https://gynvael.coldwind.pl/legacy/wyklady.net/d/gynvael_c11.htm)
+  * [gynvael.vexillium.org](https://web.archive.org/web/20070127055353/http://gynvael.vexillium.org:80/)
+
 
 ### C++
   * [C++11](https://www.thegeekstuff.com/2016/02/c-plus-plus-11)
