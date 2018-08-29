@@ -1,5 +1,5 @@
 #!/bin/bash
-# This is script for Arch linux, that help me start up new system instance .
+# This is script for Arch linux, that help me start up new system instance.
 
 
 [ `whoami` == "root" ] \
