@@ -3,5 +3,8 @@
 :set shiftwidth=4
 :set expandtab
 
+" enable syntax color
+:syntax on
+
 " Set clipboard to sys clipboard
 :set clipboard=unnamedplus
