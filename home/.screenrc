@@ -2,7 +2,7 @@
 startup_message off
 
 
-i# tab-completion flash in heading bar
+# tab-completion flash in heading bar
 vbell off
 
 # keep scrollback n lines
