@@ -260,3 +260,8 @@ sudo pacman -S --noconfirm \
     
 # Reload ~/.bashrc    
 source ~/.bashrc;
+
+
+# Missing packages:
+    - jq
+    - pygmentize
