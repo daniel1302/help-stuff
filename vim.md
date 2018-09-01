@@ -20,3 +20,12 @@
   * Press **CRTL** + **V**
   * Select lines (up, down, left and right keys)
   * Press **DELETE**
+
+
+### Hack & Tricks
+
+##### 1. Save current changes with sudo
+
+```
+:w !sudo tee %
+```
