@@ -17,6 +17,7 @@
   * [CJDNS for Arch](https://wiki.archlinux.org/index.php/Cjdns)
   
 ### Linux administration
+  * [Linux internals](https://0xax.gitbooks.io/linux-insides/content/)
   * [Bash pitfails](https://mywiki.wooledge.org/BashPitfalls)
   * [IP Tables](http://rjachowicz.kis.p.lodz.pl/IPTables.pdf)
   
