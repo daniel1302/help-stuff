@@ -9,6 +9,9 @@
   * [About Entities and DTO in Symfony](https://blog.martinhujer.cz/symfony-forms-with-request-objects/)
   * [Blog about AWS and clouds](https://cloudonaut.io/)
   
+### PHP
+  * [Coroutines in PHP](https://nikic.github.io/2012/12/22/Cooperative-multitasking-using-coroutines-in-PHP.html)
+  
 ### Videos PL
   * [CQRS](https://vimeo.com/197594221)
    
