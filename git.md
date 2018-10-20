@@ -7,7 +7,7 @@
   git revert [sha-commita]                              revert changes
   git revert -m 1 [sha-commita]                         revert only one merge
   git update-index --assume-unchanged [file-name]       disable file following
-  git rm --cached -r [file-name]                        remove file from cache
+  git rm --cached -r --ignore-unmatch [file-name]       remove file from cache
   git commit --amend                                    update last commit that is not pushed
   git commit --amend --reset-author                     update author of last commit
   git reset --soft HEAD~1                               delete last commit without deleting files
