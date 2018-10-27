@@ -155,7 +155,7 @@ hash masterpdfeditor4 \
 # Install Terraform
 [ ! -e /usr/local/bin/terraform ] \
 && echo "Installing terraform" \
-&& sudo curl --output /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.11.9/terraform_0.11.9_linux_amd64.zip \
+&& sudo curl --output /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.11.10/terraform_0.11.10_linux_amd64.zip \
 &&  { \
         cd /tmp \
 	&& [ ! -e ./terraform ] \
