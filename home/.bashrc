@@ -60,8 +60,11 @@ yt2mp3() {
         echo "[ERROR] USAGE: $0 YOUTUBE_URL"
         return;
     fi;
-
-    youtube-dl --extract-audio --audio-format mp3 $1;
+    if [ -e /usr/local/bin/youtube-dl ] && [ -x /usr/local/bin/youtube-dl]; then
+    	/usr/local/bin/youtube-dl --extract-audio --audio-format mp3 $1;
+    else
+        youtube-dl --extract-audio --audio-format mp3 $1;
+    fi;
 }
 
 
