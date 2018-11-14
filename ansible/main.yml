@@ -1,0 +1,40 @@
+---
+- name: Install system
+  hosts: 127.0.0.1
+  become: true
+
+  tasks:
+    - name: 'Create user for aur command'
+      user:
+        name: aur_builder
+        group: wheel
+
+    - name: 'Add entry about aur_builder user in sudoers'
+      lineinfile:
+        path: /etc/sudoers.d/11-install-aur_builder
+        line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
+        create: yes
+        validate: 'visudo -cf %s'
+
+    - name: 'Install CLion'
+      aur: name=clion use=makepkg skip_installed=true
+      become: yes
+      become_user: aur_builder
+
+    - name: 'Install PHPStorm'
+      aur: name=phpstorm use=makepkg skip_installed=true
+      become: yes
+      become_user: aur_builder
+
+    - name: 'Install Skype'
+      aur: name=skypeforlinux-stable-bin use=makepkg skip_installed=true
+      become: yes
+      become_user: aur_builder
+
+    - name: 'Install terraform'
+      pacman:
+        name: terraform
+        state: present
+
+    - import_tasks: install-nginx.yml
+    - import_tasks: git-config.yml
