@@ -4,6 +4,11 @@
   become: true
 
   tasks:
+    - name: 'Upgrade system'
+      pacman:
+        upgrade: yes
+        state: latest
+
     - name: 'Create user for aur command'
       user:
         name: aur_builder
@@ -34,7 +39,63 @@
     - name: 'Install terraform'
       pacman:
         name: terraform
+        state: latest
+
+    - name: 'Install AUDIO'
+      pacman:
+        name: manjaro-pulse,pa-applet,pulseaudio-alsa,pulseaudio-bluetooth,pulseaudio-equalizer,pavucontrol
         state: present
+
+    - name: 'Install xrandr GUI'
+      pacman:
+        name: arandr
+        state: present
+
+    - name: 'Install Firefox'
+      pacman:
+        name: firefox
+        state: present
+
+    - name: 'Install chrome'
+      aur: name=google-chrome use=makepkg skip_installed=true
+      become: yes
+      become_user: aur_builder
+
+    - name: 'Install Meld'
+      pacman:
+        name: meld
+        state: present
+
+    - name: 'Install VSC'
+      pacman:
+        name: code
+        state: present
+
+    - name: 'Install Docker'
+      pacman:
+        name: docker,docker-compose
+        state: latest
+
+    - name: 'Install aws-cli'
+      pacman:
+        name: aws-cli
+        state: latest
+
+    - name: 'Install Transmission'
+      pacman:
+        name: transmission-qt
+        state: present
+
+    - name: 'Install MasterPDFEditor'
+      aur: name=masterpdfeditor use=makepkg skip_installed=true
+      become: yes
+      become_user: aur_builder
+
+    - name: 'Install keepass'
+      pacman:
+        name: keepassxc
+        state: present
+
 
     - import_tasks: install-nginx.yml
     - import_tasks: git-config.yml
