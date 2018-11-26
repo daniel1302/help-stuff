@@ -4,10 +4,10 @@
   become: true
 
   tasks:
-    - name: 'Upgrade system'
-      pacman:
-        upgrade: yes
-        state: latest
+          #    - name: 'Upgrade system'
+          #      pacman:
+          #        upgrade: yes
+          #        state: latest
 
     - name: 'Create user for aur command'
       user:
@@ -21,6 +21,21 @@
         create: yes
         validate: 'visudo -cf %s'
 
+    - name: 'Install Pacaur'
+      pacman:
+        name: pacaur
+        state: latest
+
+    - name: 'Install traceroute'
+      pacman:
+        name: traceroute
+        state: latest
+
+    - name: 'Install jq'
+      pacman:
+        name: jq
+        state: latest
+
     - name: 'Install CLion'
       aur: name=clion use=makepkg skip_installed=true
       become: yes
@@ -32,7 +47,7 @@
       become_user: aur_builder
 
     - name: 'Install Skype'
-      aur: name=skypeforlinux-stable-bin use=makepkg skip_installed=true
+      aur: name=skypeforlinux-stable-bin use=makepkg skip_installed=true use=pacaur
       become: yes
       become_user: aur_builder
 
@@ -40,11 +55,6 @@
       pacman:
         name: terraform
         state: latest
-
-    - name: 'Install AUDIO'
-      pacman:
-        name: manjaro-pulse,pa-applet,pulseaudio-alsa,pulseaudio-bluetooth,pulseaudio-equalizer,pavucontrol
-        state: present
 
     - name: 'Install xrandr GUI'
       pacman:
@@ -96,6 +106,43 @@
         name: keepassxc
         state: present
 
+    - name: 'Install npm'
+      pacman:
+        name: npm
+        state: present
 
+    - name: 'Install youtube-dl'
+      pacman:
+        name: youtube-dl
+        state: present
+
+    - name: 'Install clementine'
+      pacman:
+        name: clementine
+        state: present
+
+    - name: 'Install PyCharm'
+      aur: name=pycharm-professional use=makepkg skip_installed=true
+      become: yes
+      become_user: aur_builder
+
+    - name: 'Install cloudflare CLI'
+      npm:
+        name: cloudflare-cli
+        global: yes
+
+    - name: 'Install Intellij IDEA'
+      aur: name=intellij-idea-ce use=makepkg skip_installed=true
+      become: yes
+      become_user: aur_builder
+
+    - name: 'Install Calibre'
+      aur: name=calibre use=makepkg skip_installed=true
+      become: yes
+      become_user: aur_builder
+
+
+
+    - import_tasks: install-pritunl-client.yml
     - import_tasks: install-nginx.yml
     - import_tasks: git-config.yml

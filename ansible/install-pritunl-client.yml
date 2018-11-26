@@ -1,0 +1,21 @@
+- name: 'Add pritunl client repo'
+  lineinfile:
+    path: /etc/pacman.conf
+    line: |
+      [pritunl]
+      Server = https://repo.pritunl.com/stable/pacman
+
+- name: 'Add pritunl client keys keys'
+  shell: |
+    sudo pacman-key --keyserver hkp://keyserver.ubuntu.com -r 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+    sudo pacman-key --lsign-key 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+  args:
+    executable: /bin/bash
+
+- name: 'Update repositories'
+  pacman: update_cache=yes
+
+- name: 'Install pritunl client'
+  pacman:
+    name: pritunl-client-electron,sudo pacman,pritunl-client-electron-numix-theme
+    state: present
