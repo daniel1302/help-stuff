@@ -8,6 +8,7 @@
   * [Entities](https://sarvendev.com/2018/01/encja-byc-zawsze-poprawnym-obiektem/)
   * [About Entities and DTO in Symfony](https://blog.martinhujer.cz/symfony-forms-with-request-objects/)
   * [Blog about AWS and clouds](https://cloudonaut.io/)
+  * [IEEE 754](https://eduinf.waw.pl/inf/alg/006_bin/0022.php)
   
 ### PHP
   * [Coroutines in PHP](https://nikic.github.io/2012/12/22/Cooperative-multitasking-using-coroutines-in-PHP.html)
