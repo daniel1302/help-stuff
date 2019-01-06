@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ssh daniel@localhost -p19999
