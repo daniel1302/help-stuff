@@ -1,24 +1,21 @@
 #!/bin/bash
 
 if [[ $# -ne 1 ]]; then
-	echo "Usage: $0 <hosts_file>"
-	exit 1
+        echo "Usage: $0 <hosts_file>"
+        exit 1
 fi
 
 source $1
 
-# for ((i=0; i < ${#HOST[@]}; i++))
-# do
-# 	echo "=> Tunneling tunneling -R ${LOCAL_PORT[$i]}:localhost:${REMOTE_PORT[$i]} ${REMOTE_USER[$i]}@${HOST[$i]} &"
-# 	autossh -M 0 -q -N -o "ServerAliveInterval 60" -o "ServerAliveCountMax 3" -o "StrictHostKeyChecking no" -R ${LOCAL_PORT[$i]}:localhost:${REMOTE_PORT[$i]} ${REMOTE_USER[$i]}@${HOST[$i]} &
-# done
-# sleep 2;
-autossh -M 0 -q -N -o "ServerAliveInterval 60" -o "ServerAliveCountMax 3" -o "StrictHostKeyChecking no" -R ${LOCAL_PORT[$i]}:localhost:${REMOTE_PORT[$i]} ${REMOTE_USER[$i]}@${HOST[$i]} &
+for ((i=0; i < ${#HOST[@]}; i++))
+do
+        echo "=> Tunneling localhost:${LOCAL_PORT[$i]} to ${REMOTE_USER[$i]}@${HOST[$i]}:${REMOTE_PORT[$i]}"
+        autossh -M 0 -q -N -o "ServerAliveInterval 60" -o "ServerAliveCountMax 3" -o "StrictHostKeyChecking no" -R ${LOCAL_PORT[$i]}:localhost:${REMOTE_PORT[$i]} ${REMOTE_USER[$i]}@${HOST[$i]} -i ${REMOTE_KEY[$i]} &
+done
+
 for job in `jobs -p`
 do
-	echo "waiting for $job"
-	wait $job
+        wait $job
 done
 
 echo "=> Exiting"
-autossh -M 0 -q -N -o "ServerAliveInterval 60" -o "ServerAliveCountMax 3" -o "StrictHostKeyChecking no" -R 19999:localhost:22 root@vallheru.pl &
