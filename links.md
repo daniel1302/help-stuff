@@ -25,7 +25,7 @@
   * [Bash pitfails](https://mywiki.wooledge.org/BashPitfalls)
   * [IP Tables](http://rjachowicz.kis.p.lodz.pl/IPTables.pdf)
   
-### History
+### Historical
   * [wyklady.net](https://gynvael.coldwind.pl/legacy/wyklady.net/d/gynvael_c11.htm)
   * [gynvael.vexillium.org](https://web.archive.org/web/20070127055353/http://gynvael.vexillium.org:80/)
 
@@ -40,6 +40,9 @@
   * [Random generators](http://itscompiling.eu/2016/04/11/generating-random-numbers-cpp/)
   * [Too many initializer](https://4programmers.net/Forum/C_i_C++/263116-too_many_initializers?p=1206312#id1206312) - thanks to [satirev](https://github.com/satirev)
   * [About constructors in modern C++](https://www.youtube.com/watch?v=vLinb2fgkHk)
+
+### People/HR
+  * [Guide to interviewing](https://www.joelonsoftware.com/2006/10/25/the-guerrilla-guide-to-interviewing-version-30/)
 
 ### Videos EN
 ##### Security 
