@@ -56,6 +56,7 @@ Types:
 
 ### [Compilation steps by Gynvael](https://www.youtube.com/watch?v=wDKeJ79TBsg)
 
+```
 GCC is not compiler is compilation tool set and compilation driver.
 Compilation steps:
 1) Preprocessing(cpp) - `gcc -e`
@@ -69,5 +70,5 @@ You can dump all steps of compilation into files by add `-f dump-tree-all` flag
 You can read objects files with
     - `objdump -d FILENAME` - disassembly
     - `objdump -x FILENAME` - attach all headers
-
+```
 
