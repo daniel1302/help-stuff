@@ -4,6 +4,17 @@
 | --------------------------------------- |:---------------------------:|
 | MultilineVisual Mode:                   |```CRTL + V```               |
 
+#### Navigation in windows
+
+| Command                                 |                                    |
+| --------------------------------------- |:----------------------------------:|
+| Horizontal splitting                    | ```Ctrl+W, S```                    |
+| Vertical splitting                      | ```Ctrl+W, v```                    |
+| Close one                               | ```Ctrl+W, Q```                    |
+| Switch between windows                  | ```Ctrl+W, Ctrl+W```               |
+| Switch to adjacent window               | ``` Ctrl+W, J (or K, H, L)```      |
+
+
 
 
 
