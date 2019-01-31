@@ -1,6 +1,6 @@
 ### Shortcuts
 
-This is simple screen cheat sheet, with command I use. For more info plese see ```man screen```
+This is simple cheat sheet, with commands for the `screen` program I use. For more info plese see ```man screen```
 
 
 | Command                                 |                                    |
