@@ -8,7 +8,7 @@ This is simple cheat sheet, with commands for the `screen` program I use. For mo
 | Create a new window                     | ```Ctrl+a, c```                    |
 | Kill the current window                 | ```Ctrl+a, K```                    |
 | List all windows as a bar               | ```Ctrl+a, w```                    |
-| List all windows as a select            | ```Crtl+a, "                       |
+| List all windows as a select            | ```Crtl+a, "```                    |
 | Command                                 | ```Ctrl+a, :```                    |
 | Switch between windows                  | ```Ctrl+a, 0-9```                  |
 | Detach but keep shell window open       | ```Ctrl+a, d```                    |
