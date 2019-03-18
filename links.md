@@ -32,6 +32,7 @@
 
 
 ### C++
+  * [Fluent C++](http://www.fluentcpp.com/)
   * [Optimizing C++](https://www.agner.org/optimize/optimizing_cpp.pdf)
   * [C++ Compiler](http://www.cppgm.org/pa2.html)
   * [C++11](https://www.thegeekstuff.com/2016/02/c-plus-plus-11)
