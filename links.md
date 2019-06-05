@@ -43,6 +43,7 @@
   * [Random generators](http://itscompiling.eu/2016/04/11/generating-random-numbers-cpp/)
   * [Too many initializer](https://4programmers.net/Forum/C_i_C++/263116-too_many_initializers?p=1206312#id1206312) - thanks to [satirev](https://github.com/satirev)
   * [About constructors in modern C++](https://www.youtube.com/watch?v=vLinb2fgkHk)
+  * [CPP-Benchmark](http://quick-bench.com/)
 
 ### People/HR
   * [Guide to interviewing](https://www.joelonsoftware.com/2006/10/25/the-guerrilla-guide-to-interviewing-version-30/)
