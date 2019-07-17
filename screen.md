@@ -22,7 +22,7 @@ This is simple cheat sheet, with commands for the `screen` program I use. For mo
 | Command                                 |                                    |
 | --------------------------------------- |:----------------------------------:|
 | Split display horizontally              | ```Crtl+a, S```                    |
-| Split display vertically                | ``` Crtl+a, | ```                  |
+| Split display vertically                | ``` Crtl+a, \| ```                 |
 | Jump to next display region	            | ```Crtl+a, TAB```                  |
 | Remove current region                   | ```Crtl+a, X```                    |
 | Remove all regions but the current one  | ```Crtl+a, Q```                    |
