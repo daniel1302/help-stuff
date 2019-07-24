@@ -20,6 +20,7 @@
 ### Tools
   * [Explain Shell](https://explainshell.com/)
   * [CJDNS for Arch](https://wiki.archlinux.org/index.php/Cjdns)
+  * [Silver searcher](https://geoff.greer.fm/)
   
 ### Linux administration
   * [Linux internals](https://0xax.gitbooks.io/linux-insides/content/)
