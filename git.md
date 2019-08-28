@@ -42,4 +42,8 @@ git config --global core.editor [EDITOR_NAME]
 ```
 git config --global alias.tree "log --oneline --decorate --all --graph"
 git config --global alias.tree1 "log --oneline --decorate --all --graph --format='%Cblue%h%Cgreen<%an>: %Creset%B'"
+git config --global alias.diff-tree "log --left-right --graph --cherry-pick --oneline"
 ```
+
+Example:
+ - `git diff-tree master...development`
