@@ -1,4 +1,4 @@
-Thanks to collector1871 from #archlinux.org.pl @ freenode.net
+Thanks to *collector1871* from #archlinux.org.pl @ freenode.net
 
 
 Użyta instrukcja (zadziałała) - data : 26.06.2019 rok
