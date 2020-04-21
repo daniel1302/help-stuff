@@ -35,6 +35,8 @@
 git config --global user.name "[USER_NAME]"
 git config --global user.email [EMAIL]
 git config --global core.editor [EDITOR_NAME]
+git config --global --add url."git@github.com:".insteadOf "https://github.com/"
+
 ```
 
 
